@@ -1,7 +1,10 @@
-import app from './app';
-import config from './config/config';
+import app from './app.js';
+import config from './config/config.js';
+import connectDB from './database/connect-db.js';
 
-const PORT = config.PORT;
+const PORT = config.server.port;
+
+await connectDB()
 
 app
   .listen(PORT, () => {
